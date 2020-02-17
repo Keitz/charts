@@ -1,3 +1,21 @@
 apiVersion: v1
-entries: {}
-generated: "2020-02-17T17:43:06.122785+02:00"
+entries:
+  keitz:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-02-17T17:57:10.817586+02:00"
+    description: A Helm chart for keitz github runner
+    digest: dc0f1e32f35223d1db5e74c3197ecda9629fdab02920da2d5495be87c366d549
+    home: https://github.com/Keitz/Keitz-core
+    maintainers:
+    - email: idans@microsoft.com
+      name: Idan Shahar
+    - email: batelt@jfrog.com
+      name: Batel Zohar
+    name: keitz
+    sources:
+    - https://github.com/Keitz/Keitz-core
+    urls:
+    - https://keitz.github.io/charts/docs/keitz-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-02-17T17:57:10.816769+02:00"
