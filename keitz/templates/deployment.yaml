@@ -28,6 +28,13 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          volumeMounts:
+            - mountPath: /var/run/docker.sock
+              name: docker-socket-volume
+            - mountPath: /usr/bin/docker
+              name: docker
+          securityContext:
+            privileged: true
           env:
             - name: REPO
               value: {{ .Values.environments.repo }}
@@ -35,6 +42,15 @@ spec:
               value: {{ .Values.environments.token }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: docker-socket-volume
+          hostPath:
+            path: /var/run/docker.sock
+            type: File
+        - name: docker
+          hostPath:
+            path: /usr/bin/docker
+            type: File
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
